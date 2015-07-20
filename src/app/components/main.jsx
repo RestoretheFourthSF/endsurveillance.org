@@ -7,6 +7,19 @@ let Dialog = mui.Dialog;
 let ThemeManager = new mui.Styles.ThemeManager();
 let Colors = mui.Styles.Colors;
 
+let {
+  Avatar,
+  Card,
+  CardActions,
+  CardExpandable,
+  CardHeader,
+  CardMedia,
+  CardText,
+  CardTitle,
+  FlatButton
+} = mui;
+
+
 let Main = React.createClass({
 
   childContextTypes: {
@@ -29,27 +42,64 @@ let Main = React.createClass({
 
     let containerStyle = {
       textAlign: 'center',
-      paddingTop: '200px'
+      paddingTop: '200px',
+      'max-width':'906px',
+      margin:'0 auto',
+      display:'inline-flex',
     };
 
     let standardActions = [
       { text: 'Okay' }
     ];
 
+    let cardStyle={
+      width:'200px',
+      margin:'20px'
+    }
     return (
       <div style={containerStyle}>
-        <Dialog
-          title="Super Secret Password"
-          actions={standardActions}
-          ref="superSecretPasswordDialog">
-          1-2-3-4-5
-        </Dialog>
+      <Card style={cardStyle}>
+        <CardHeader
+          title="Congress Critter"
+          subtitle="A Scorecard for your Congress Critter"
+          avatar={<Avatar style={{color:'red'}}>A</Avatar>}/>
+        <CardMedia overlay={<CardTitle title="Title" subtitle="Subtitle"/>}>
+          <img src="http://lorempixel.com/600/337/nature/"/>
+        </CardMedia>
+        <CardTitle title="Title" subtitle="Subtitle"/>
+        <CardActions>
+          <FlatButton label="Call "/>
+          <FlatButton label="Emails"/>
+        </CardActions>
+        <CardText>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+          Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+          Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+        </CardText>
+      </Card>
+      <br/>
 
-        <h1>material-ui</h1>
-        <h2>example project</h2>
-
-        <RaisedButton label="Super Secret Password" primary={true} onTouchTap={this._handleTouchTap} />
-
+      <Card style={cardStyle}>
+        <CardHeader
+          title="Congress Critter2"
+          subtitle="A Scorecard for your Congress Critter"
+          avatar={<Avatar style={{color:'red'}}>A</Avatar>}/>
+        <CardMedia overlay={<CardTitle title="Title" subtitle="Subtitle"/>}>
+          <img src="http://lorempixel.com/600/337/nature/"/>
+        </CardMedia>
+        <CardTitle title="Title" subtitle="Subtitle"/>
+        <CardActions>
+          <FlatButton label="Call "/>
+          <FlatButton label="Emails"/>
+        </CardActions>
+        <CardText>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+          Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+          Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+        </CardText>
+      </Card>
       </div>
     );
   },
