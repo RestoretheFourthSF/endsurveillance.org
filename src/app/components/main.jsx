@@ -7,6 +7,8 @@ let Dialog = mui.Dialog;
 let ThemeManager = new mui.Styles.ThemeManager();
 let Colors = mui.Styles.Colors;
 
+let Dataset = require('../utility/dataset.js');
+
 let {
   Avatar,
   Card,
