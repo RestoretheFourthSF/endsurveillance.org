@@ -407,7 +407,7 @@ function getDataFromGoogle(callback) {
 
 			var res = JSON.parse(xhr.responseText);
 
-			politicians =[]
+			var politicians =[]
 
 			for (var i = 0; i < res.feed.entry.length; i++) {
 				var entry = res.feed.entry[i];
@@ -417,7 +417,7 @@ function getDataFromGoogle(callback) {
 				politicians.push(politician);
 			}
 
-		if (callback =="undefined"){
+		if (callback != undefined){
 			callback(politicians);
 		}
 	}

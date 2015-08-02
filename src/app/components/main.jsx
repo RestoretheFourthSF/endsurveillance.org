@@ -9,6 +9,13 @@ let Colors = mui.Styles.Colors;
 
 let Dataset = require('../utility/dataset.js');
 
+
+//Maybe this belongs somewhere else?
+Dataset.getDataFromGoogle(function (politicians) {
+  window.politicians = politicians;
+  }
+);
+
 let {
   Avatar,
   Card,
