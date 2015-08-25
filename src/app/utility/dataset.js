@@ -386,6 +386,68 @@ Politician.prototype.doScore = function() {
 
 	this.score = score;
 	this.score_criteria = score_criteria;
+    this.link = (this["first_name"].concat("-",this["last_name"]).toLowerCase());
+
+
+	// A+: +15 and above
+    // A: +14 to +12 (in my spreadsheet, Bobby Rush is miscoded as A when at 11 he should be A-)
+    // A-: +11 to +10
+    //
+    // B+: +9
+    // B: +8 to +7
+    // B-: Null set; looks like I should have coded +7 as B-
+    //
+    // C+: +6
+    // C: +5 to +3
+    // C-: +2 to 0
+    //
+    // D+: -1 to -2
+    // D: -3 to -7
+    // D-: -8 to -9
+    // F: -10 and below
+
+    if(this.score >= 15){
+      this.grade="A+"
+    }
+    else if(this.score >= 12){
+      this.grade="A"
+    }
+    else if(this.score >= 10){
+      this.grade="A-"
+    }
+    else if(this.score >= 9){
+      this.grade="B+"
+    }
+    else if(this.score >= 8){
+      this.grade="B"
+    }
+    else if(this.score >= 7){
+      this.grade="B-"
+    }
+    else if(this.score >= 6){
+      this.grade="B-"
+    }
+    else if(this.score >= 5){
+      this.grade="C+"
+    }
+    else if(this.score >= 3){
+      this.grade="C"
+    }
+    else if(this.score >= 0){
+      this.grade="C-"
+    }
+    else if(this.score >= -2){
+      this.grade="D+"
+    }
+    else if(this.score >= -7){
+      this.grade="D"
+    }
+    else if(this.score >= -9){
+      this.grade="D-"
+    }
+    else{
+      this.grade="F"
+    }
 };
 
 
